@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	todos: [
+	todos: JSON.parse(localStorage.getItem('todos')) || [
 		{
 			id: 0,
 			title: 'Добавить первую цель',
 			isComplete: false,
 		},
-	],
+	]
 }
 
 export const todoSlice = createSlice({
@@ -21,11 +21,8 @@ export const todoSlice = createSlice({
 			state.todos = state.todos.filter(obj => obj.id !== action.payload);
 		},
 		completeItem(state, action) {
-			state.todos = state.todos.map(obj => (
-				obj.isComplete === false ? 
-					{...obj, isComplete: action.payload}
-					: {...obj, isComplete: action.payload}
-			))
+			const currentItem = state.todos.find((obj) => obj.id === action.payload);
+			currentItem.isComplete = !currentItem.isComplete
 		}
 	}
 });

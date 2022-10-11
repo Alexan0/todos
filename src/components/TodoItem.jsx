@@ -14,7 +14,7 @@ const TodoItem = ({ id, title, isComplete }) => {
 	}
 
 	const onClickCompleteItem = () => {
-		dispatch(completeItem(!isComplete))
+		dispatch(completeItem(id))
 	}
 
 	return (
@@ -23,7 +23,7 @@ const TodoItem = ({ id, title, isComplete }) => {
 				<button
 					className={
 						isComplete ? 'flex-[0_0_20px] h-5 rounded-2xl border-blue-500 border bg-blue-400 flex justify-center items-center'
-						: 'flex-[0_0_20px] h-5 rounded-2xl border-blue-500 border flex justify-center items-center'
+							: 'flex-[0_0_20px] h-5 rounded-2xl border-blue-500 border flex justify-center items-center'
 					}
 					type='button'>
 					{
