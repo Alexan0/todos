@@ -6,7 +6,7 @@ function App() {
   const [idItem, setIdItem] = React.useState(1);
 
   const nowDate = new Date()
-  document.body.style.overflow = 'hidden'
+ 
   const showPopup = () => {
     setPopup(!popup);
   }
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div className="bg-[#242132] h-screen w-full text-white">
-        <div className=" max-w-4xl m-auto w-full h-full flex flex-col justify-center py-20 px-4">
+        <div className=" max-w-4xl m-auto w-full h-[80vh] flex flex-col justify-center py-20 px-4">
           <div className="mb-3 flex justify-between pr-3">
             <h1 className="text-2xl xs:text-3xl ">Todos list</h1>
             <h4 className="text-xl self-end">{nowDate.toDateString()}</h4>
